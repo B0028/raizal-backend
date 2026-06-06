@@ -1,0 +1,37 @@
+{
+  "name": "proyecto-raizal-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -L index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "docker:up": "docker compose -p raizal up",
+    "docker:down": "docker compose -p raizal down",
+    "docker:build": "docker compose -p raizal up --build",
+    "docker:up:prod": "docker compose -p raizal-prod -f docker-compose.prod.yml up",
+    "docker:down:prod": "docker compose -p raizal-prod -f docker-compose.prod.yml down",
+    "docker:build:prod": "docker compose -p raizal-prod -f docker-compose.prod.yml up --build",
+    "docker:breaking": "docker compose down -v && docker compose up -d --build",
+    "format:check": "npx prettier --check .",
+    "format:fix": "npx prettier --write .",
+    "format:debug": "npx prettier --debug-check ."
+  },
+  "keywords": [
+    "Anima",
+    "Raizal"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prettier": "3.8.3"
+  }
+}

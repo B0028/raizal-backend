@@ -1,0 +1,46 @@
+# 1. Dependencias y Gestores de Paquetes
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# 2. Carpetas de producción, compilación y caché
+dist/
+build/
+.next/
+out/
+.turbo/
+.cache/
+
+# 3. Cobertura de pruebas (Testing)
+coverage/
+
+# 4. Infraestructura, Despliegue y Contenedores
+**/Dockerfile
+**/docker-compose.yml
+**/.dockerignore
+.vercel/
+.netlify/
+
+# 5. Archivos de configuración del sistema y Git
+.git/
+.github/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 6. Archivos de entorno y Logs
+.env*
+*.log
+.eslintcache
+
+# 7. Archivos multimedia y binarios
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.ico
+*.webp
+*.gif
+*.pdf

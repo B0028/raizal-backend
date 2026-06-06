@@ -1,0 +1,30 @@
+name: Bot de Advertencia de Breaking Change
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  comentar-advertencia:
+    if: github.event.label.name == 'breaking change'
+    runs-on: ubuntu-latest
+    
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Publicar comentario automático
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ## ⚠️ BREAKING CHANGE
+            
+            Copia, pega y ejecuta este comando en tu terminal para limpiar y reiniciar tus contenedores de Docker:
+            
+            ```bash
+            docker compose down -v && docker compose up -d --build
+            ```
+            o simplemente con los scripts de package.json:
+            ```bash
+            npm run docker:breaking
+            ```

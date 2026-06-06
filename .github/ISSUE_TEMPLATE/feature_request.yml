@@ -1,0 +1,12 @@
+name: "✨ Nueva Funcionalidad / Mejora"
+description: "Propón una nueva característica o mejora de código."
+title: "feat: [Breve descripción de la feature]"
+labels: ["feature"]
+body:
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: "¿Qué valor aporta esta funcionalidad?"
+      placeholder: "Permite al usuario hacer X cosa..."
+    validations:
+      required: true

@@ -1,0 +1,224 @@
+# .github/labeler.yml
+
+"breaking change":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'          # Requiere reconstruir el contenedor para instalar nuevos node_modules
+          - 'package-lock.json'     # Cambios en las versiones fijas de dependencias
+          - '**/Dockerfile*'           # Cambios en la receta de la imagen de Docker
+          - '**/docker-compose*'       # Cambios en variables de entorno, puertos o volúmenes
+          - '.env'          # Indica que se agregó una nueva variable de entorno obligatoria
+          - '**/prisma/schema.prisma' # (Solo Backend) Requiere correr migraciones de base de datos obligatoriamente
+
+# ==========================================
+# EQUIPOS (sig/)
+# ==========================================
+
+"sig/backend":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'server/**/*'
+          - '**/*.{py,go,java,rb,js,ts}'
+
+"sig/devops":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**/*'
+          - '**/*jenkins*'
+          - '**/.gitlab-ci.yml'
+          - '**/monitoring/**/*'
+          - '**/grafana/**/*'
+          - '**/prometheus/**/*'
+          - '**/docker/**/*'
+          - '**/Dockerfile'
+          - '**/docker-compose.yml'
+          - '**/logs/**/*'
+          - '**/logging/**/*'
+          - '**/logger/**/*'
+
+"sig/qa":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.test.*'
+          - '**/*.spec.*'
+          - '**/__tests__/**/*'
+          - '**/cypress/**/*'
+          - '**/playwright/**/*'
+          - '**/e2e/**/*'
+          - '**/perf/**/*'
+          - '**/performance/**/*'
+          - '**/lighthouse/**/*'
+
+# ==========================================
+# COMPONENTES (area/) BACKEND UNICAMENTE
+# ==========================================
+
+# ARQUITECTURA
+# ==========================================
+
+"area/auth":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/auth/**/*'
+          - '**/login/**/*'
+          - '**/register/**/*'
+
+"area/api":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/api/**/*'
+          - '**/routes/**/*'
+          - '**/controllers/**/*'
+          - '**/endpoints/**/*'
+          - '**/middlewares/**/*'
+
+"area/db":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/db/**/*'
+          - '**/database/**/*'
+          - '**/migrations/**/*'
+          - '**/models/**/*'
+          - '**/schemas/**/*'
+          - '**/*.prisma'
+
+"area/security":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/security/**/*'
+          - '**/crypto/**/*'
+          - '**/cors/**/*'
+          - '**/*helmet*'
+
+# ==========================================
+# COMPONENTES (area/) GENERALES
+# ==========================================
+
+# Negocio
+# ==========================================
+
+"area/billing":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/billing/**/*'
+          - '**/payments/**/*'
+          - '**/stripe/**/*'
+
+"area/users":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/users/**/*'
+          - '**/profile/**/*'
+          - '**/avatars/**/*'
+
+"area/notifications":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/notifications/**/*'
+          - '**/emails/**/*'
+          - '**/services/mail/**/*'
+
+"area/search":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/search/**/*'
+          - '**/filters/**/*'
+          - '**/elasticsearch/**/*'
+
+"area/analytics":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/analytics/**/*'
+          - '**/metrics/**/*'
+          - '**/reports/**/*'
+
+"area/settings":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/settings/**/*'
+          - '**/preferences/**/*'
+          - '**/config-panel/**/*'
+
+# PRODUCTO
+# ==========================================
+
+"area/realtime":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/sockets/**/*'
+          - '**/websocket/**/*'
+          - '**/sse/**/*'
+          - '**/chat/**/*'
+
+"area/cache":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/cache/**/*'
+          - '**/redis/**/*'
+          - '**/service-worker.js'
+
+"area/workers":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/workers/**/*'
+          - '**/queues/**/*'
+          - '**/cron/**/*'
+          - '**/jobs/**/*'
+
+"area/upload":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/uploads/**/*'
+          - '**/storage/**/*'
+          - '**/s3/**/*'
+          - '**/images/**/*'
+
+# ==========================================
+# COMPONENTES (area/) DEVOPS
+# ==========================================
+
+"area/docker":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/docker/**/*'
+          - '**/Dockerfile*'
+          - '**/docker-compose*'
+
+"area/logging":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/logs/**/*'
+          - '**/logging/**/*'
+          - '**/logger/**/*'
+
+"area/monitoring":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/monitoring/**/*'
+          - '**/grafana/**/*'
+          - '**/prometheus/**/*'
+
+"area/cicd":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**/*'
+          - '**/*jenkins*'
+          - '**/.gitlab-ci.yml'
+
+# ==========================================
+# COMPONENTES (area/) QA
+# ==========================================
+
+"area/testing-unit":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.test.*'
+          - '**/*.spec.*'
+          - '**/__tests__/**/*'
+
+"area/testing-e2e":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/cypress/**/*'
+          - '**/playwright/**/*'
+          - '**/e2e/**/*'

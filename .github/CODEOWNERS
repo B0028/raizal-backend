@@ -1,0 +1,9 @@
+/**/.github/ @B0028 @Baz003
+/**/Dockerfile @B0028 @Baz003
+/**/docker-compose.yml @B0028 @Baz003
+/**/.dockerignore @B0028 @Baz003
+/**/package.json @B0028 @Baz003
+/**/package-lock.json @B0028 @Baz003
+/**/.gitignore @B0028 @Baz003
+/**/.gitattributes @B0028 @Baz003
+/**/.env* @B0028 @Baz003

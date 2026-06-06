@@ -1,0 +1,12 @@
+name: "🐛 Reportar un Bug"
+description: "Informa sobre algo que está roto en la aplicación."
+title: "fix: [Breve descripción del problema]"
+labels: ["bug"]
+body:
+  - type: textarea
+    id: pasos
+    attributes:
+      label: "¿Cómo podemos reproducir el error?"
+      placeholder: "1. Ir a /login\n2. Hacer clic en...\n3. Ver el error..."
+    validations:
+      required: true

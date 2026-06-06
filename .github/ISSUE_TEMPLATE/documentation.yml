@@ -1,0 +1,12 @@
+name: "📝 Tarea de Documentación"
+description: "Crear o actualizar especificaciones, guías o el README."
+title: "docs: [¿Qué documentación vas a actualizar?]"
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: docs_scope
+    attributes:
+      label: "Detalles de la documentación"
+      placeholder: "Falta documentar las variables de entorno..."
+    validations:
+      required: true
