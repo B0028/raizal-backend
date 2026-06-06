@@ -3,7 +3,7 @@ services:
   frontend:
     build:
       context: ../raizal
-      dockerfile: Dockerfile,
+      dockerfile: Dockerfile
       target: build
     pull_policy: always
     ports:

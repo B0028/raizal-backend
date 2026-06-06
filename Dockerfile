@@ -13,8 +13,6 @@ EXPOSE 5000
 # Antes: CMD ["node", "server.js"]
 CMD ["npm", "run", "dev"]
 
-
-
 FROM node:24-alpine
 
 WORKDIR /app
