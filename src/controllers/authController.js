@@ -1,4 +1,3 @@
-import 'dotenv/config'; 
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import usuarios from "../data/users.js";
@@ -52,14 +51,20 @@ export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        const usuario = usuarios.find(
-            usuario => usuario.email === email
+        const usuario = usuarios.find(u => u.email === email);
+
+        if (!usuario) {
+            return res.status(401).json({
+                error: "Credenciales incorrectas"
+            });
+        }
+
+        const passwordCorrecta = await bcrypt.compare(
+            password,
+            usuario.password
         );
 
-        if (
-            !usuario ||
-            !(await bcrypt.compare(password, usuario.password))
-        ) {
+        if (!passwordCorrecta) {
             return res.status(401).json({
                 error: "Credenciales incorrectas"
             });
@@ -70,13 +75,11 @@ export const login = async (req, res) => {
                 id: usuario.id,
                 email: usuario.email
             },
-            JWT_SECRET,
-            {
-                expiresIn: "1h"
-            }
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
         );
 
-        res.json({
+        return res.json({
             token,
             user: {
                 id: usuario.id,
@@ -86,7 +89,8 @@ export const login = async (req, res) => {
         });
 
     } catch (error) {
-        res.status(500).json({
+        console.error("LOGIN ERROR:", error); // 🔥 IMPORTANTE
+        return res.status(500).json({
             error: "Error en el servidor"
         });
     }
