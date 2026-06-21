@@ -36,3 +36,5 @@ todo.md
 
 .DS_Store
 Thumbs.db
+
+/src/generated/prisma

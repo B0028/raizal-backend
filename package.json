@@ -28,10 +28,12 @@
   "type": "module",
   "dependencies": {
     "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "dotenv": "^17.4.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.14",
-    "prettier": "3.8.3"
+    "prettier": "3.8.3",
+    "prisma": "^7.8.0"
   }
 }
