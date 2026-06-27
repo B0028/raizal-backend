@@ -9,8 +9,7 @@ export default defineConfig({
     path: "prisma/migrations",
   },
   datasource: {
-    url: process.env["DATABASE_URL"], // Usa el Pooler (puerto 6543) para las consultas de la app
-    directUrl: process.env["DIRECT_URL"] // Conexión directa (puerto 5432) para migraciones
-    
+    url: process.env["DATABASE_URL"], 
+    directUrl: process.env["DIRECT_URL"] 
   },
 });

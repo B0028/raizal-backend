@@ -1,6 +1,5 @@
-/**
- * Obtener la suscripción activa del usuario
- */
+// Obtener la suscripción activa del usuario
+
 async function getUserSubscription(req, res) {
   try {
     const { userId } = req.params;

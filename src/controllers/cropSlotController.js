@@ -1,6 +1,4 @@
-/**
- * Obtener todos los slots de cultivo del usuario
- */
+// Obtener todos los slots de cultivo del usuario
 async function getUserCropSlots(req, res) {
   try {
     const userId = req.user?.id;
